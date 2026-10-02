@@ -4,7 +4,7 @@
 
 ## 🔗 دموی زنده
 
-[مشاهده سایت](https://USERNAME.github.io/samir-mehr-portfolio/)
+[مشاهده سایت](https://alirzakzmi.github.io/samir-mehr-portfolio/)
 
 ## 🎨 تکنولوژی‌ها
 
