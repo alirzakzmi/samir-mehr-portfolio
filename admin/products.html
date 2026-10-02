@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>محصولات | پنل مدیریت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Vazirmatn', 'system-ui', 'sans-serif'] },
+            colors: { lab: { 50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63' } }
+        } } }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans antialiased overflow-x-hidden">
+
+<div class="min-h-screen flex">
+    <aside id="adminSidebar" class="fixed lg:static inset-y-0 right-0 z-40 w-72 bg-lab-900 text-lab-100 flex flex-col transform transition-transform duration-300 translate-x-full lg:translate-x-0">
+        <div class="h-20 px-6 flex items-center gap-3 border-b border-white/10">
+            <img src="../assets/images/logo.png" class="w-11 h-11 object-contain bg-white rounded-xl p-1.5" />
+            <div><p class="font-extrabold text-white text-sm">سمیر مهر رامان</p><p class="text-[11px] text-lab-300">پنل مدیریت</p></div>
+        </div>
+        <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1 text-sm">
+            <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-lab-200">داشبورد</a>
+            <a href="categories.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-lab-200">دسته‌بندی‌ها</a>
+            <a href="products.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold bg-lab-600 text-white">محصولات</a>
+            <a href="../index.html" target="_blank" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-lab-200">مشاهده سایت</a>
+        </nav>
+        <div class="p-3 border-t border-white/10"><a href="login.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-lab-200">خروج</a></div>
+    </aside>
+    <div id="sidebarOverlay" class="hidden fixed inset-0 bg-black/40 z-30 lg:hidden"></div>
+
+    <div class="flex-1 flex flex-col min-w-0">
+        <header class="sticky top-0 z-20 bg-white border-b border-slate-200 h-20">
+            <div class="h-full px-4 sm:px-6 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <button id="sidebarToggleBtn" class="lg:hidden p-2.5 rounded-xl border border-slate-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <h1 class="text-base font-extrabold text-slate-800">محصولات</h1>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 p-4 sm:p-6 lg:p-8">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+                    <h2 class="font-extrabold text-slate-800 text-sm">لیست محصولات</h2>
+                    <a href="product-create.html" class="bg-lab-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl">+ افزودن</a>
+                </div>
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50 text-xs text-slate-500">
+                        <tr>
+                            <th class="text-right px-5 py-3 font-bold">نام</th>
+                            <th class="text-right px-5 py-3 font-bold">دسته</th>
+                            <th class="text-right px-5 py-3 font-bold">وضعیت</th>
+                            <th class="text-left px-5 py-3 font-bold">عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="px-5 py-3 font-semibold text-slate-700">دستگاه اتوکلاو</td>
+                            <td class="px-5 py-3"><span class="text-[10px] font-extrabold bg-lab-600 text-white px-2.5 py-1 rounded-md">آزمایشگاهی</span></td>
+                            <td class="px-5 py-3"><span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-md">منتشر شده</span></td>
+                            <td class="px-5 py-3 text-left"><a href="product-create.html" class="text-xs text-lab-600 font-bold">ویرایش</a></td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold text-slate-700">یخچال دارویی</td>
+                            <td class="px-5 py-3"><span class="text-[10px] font-extrabold bg-lab-600 text-white px-2.5 py-1 rounded-md">سرمایشی</span></td>
+                            <td class="px-5 py-3"><span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-md">منتشر شده</span></td>
+                            <td class="px-5 py-3 text-left"><a href="product-create.html" class="text-xs text-lab-600 font-bold">ویرایش</a></td>
+                        </tr>
+                        <tr class="bg-slate-50/30">
+                            <td class="px-5 py-3 font-semibold text-slate-700">محیط کشت</td>
+                            <td class="px-5 py-3"><span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">سایر</span></td>
+                            <td class="px-5 py-3"><span class="text-[10px] font-extrabold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-1 rounded-md">پیش‌نویس</span></td>
+                            <td class="px-5 py-3 text-left"><a href="product-create.html" class="text-xs text-lab-600 font-bold">ویرایش</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

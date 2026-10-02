@@ -1,0 +1,18 @@
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 100px; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f0f9ff; }
+::-webkit-scrollbar-thumb { background: #67e8f9; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #22d3ee; }
+
+.pattern-dots {
+    background-image: radial-gradient(circle, rgba(8,145,178,.15) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }

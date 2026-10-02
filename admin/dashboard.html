@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>داشبورد | پنل مدیریت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Vazirmatn', 'system-ui', 'sans-serif'] },
+            colors: { lab: { 50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63' } },
+            boxShadow: { soft: '0 10px 40px -15px rgba(8,145,178,.25)' }
+        } } }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans antialiased overflow-x-hidden">
+
+<script>window.BASE_PATH = '../';</script>
+
+<div class="min-h-screen flex">
+
+    <aside id="adminSidebar"
+        class="fixed lg:static inset-y-0 right-0 z-40 w-72 bg-lab-900 text-lab-100 flex flex-col transform transition-transform duration-300 translate-x-full lg:translate-x-0">
+
+        <div class="h-20 px-6 flex items-center gap-3 border-b border-white/10 shrink-0">
+            <img src="../assets/images/logo.png" alt="لوگو" class="w-11 h-11 object-contain bg-white rounded-xl p-1.5" />
+            <div>
+                <p class="font-extrabold text-white text-sm">سمیر مهر رامان</p>
+                <p class="text-[11px] text-lab-300">پنل مدیریت</p>
+            </div>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1 text-sm">
+
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold bg-lab-600 text-white shadow-soft">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                داشبورد
+            </a>
+
+            <div>
+                <button data-submenu-toggle="submenu-categories"
+                    class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl font-semibold text-lab-200 transition">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5a1.99 1.99 0 011.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z"/></svg>
+                        دسته‌بندی‌ها
+                    </span>
+                    <svg data-submenu-arrow class="w-4 h-4 transition-transform shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="submenu-categories" class="hidden mt-1 pr-6 space-y-0.5">
+                    <a href="categories.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-lab-300">لیست دسته‌بندی‌ها</a>
+                    <a href="category-create.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-lab-300">افزودن دسته‌بندی</a>
+                </div>
+            </div>
+
+            <div>
+                <button data-submenu-toggle="submenu-products"
+                    class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl font-semibold text-lab-200 transition">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        محصولات
+                    </span>
+                    <svg data-submenu-arrow class="w-4 h-4 transition-transform shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="submenu-products" class="hidden mt-1 pr-6 space-y-0.5">
+                    <a href="products.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-lab-300">لیست محصولات</a>
+                    <a href="product-create.html" class="block px-3 py-2 rounded-lg text-xs font-semibold text-lab-300">افزودن محصول</a>
+                </div>
+            </div>
+
+            <a href="../index.html" target="_blank"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-lab-200 transition">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                مشاهده سایت
+            </a>
+        </nav>
+
+        <div class="p-3 border-t border-white/10 shrink-0">
+            <a href="login.html"
+                class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-lab-200 transition">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                خروج از حساب
+            </a>
+        </div>
+    </aside>
+
+    <div id="sidebarOverlay" class="hidden fixed inset-0 bg-black/40 z-30 lg:hidden"></div>
+
+    <div class="flex-1 flex flex-col min-w-0">
+
+        <header class="sticky top-0 z-20 bg-white/85 backdrop-blur-xl border-b border-slate-200 h-20 shrink-0">
+            <div class="h-full px-4 sm:px-6 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 min-w-0">
+                    <button id="sidebarToggleBtn" aria-label="منو"
+                        class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 border border-slate-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="min-w-0">
+                        <h1 class="text-base sm:text-lg font-extrabold text-slate-800 truncate">داشبورد</h1>
+                        <p class="text-[11px] text-slate-500 truncate">خوش آمدید به پنل مدیریت</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0">
+                    <div class="hidden sm:block text-right">
+                        <p class="text-xs font-bold text-slate-800">مدیر سیستم</p>
+                        <p class="text-[10px] text-slate-500">admin@example.com</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-lab-400 to-lab-700 text-white font-extrabold grid place-items-center text-sm">م</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 p-4 sm:p-6 lg:p-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-11 h-11 rounded-xl bg-lab-100 text-lab-700 grid place-items-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md">+۱۲٪</span>
+                    </div>
+                    <p class="text-2xl font-extrabold text-slate-800">15</p>
+                    <p class="text-xs text-slate-500 mt-1 font-semibold">کل محصولات</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 grid place-items-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5a1.99 1.99 0 011.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-2xl font-extrabold text-slate-800">6</p>
+                    <p class="text-xs text-slate-500 mt-1 font-semibold">دسته‌بندی‌ها</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+
+                <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+                        <h2 class="font-extrabold text-slate-800 text-sm">آخرین محصولات</h2>
+                        <a href="products.html" class="text-xs font-bold text-lab-600">مشاهده همه</a>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-slate-50 text-xs text-slate-500">
+                                <tr>
+                                    <th class="text-right px-5 py-3 font-bold">نام محصول</th>
+                                    <th class="text-right px-5 py-3 font-bold">دسته‌بندی</th>
+                                    <th class="text-right px-5 py-3 font-bold">تاریخ</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-slate-50/50">
+                                    <td class="px-5 py-3 font-semibold text-slate-700">دستگاه اتوکلاو رومیزی</td>
+                                    <td class="px-5 py-3"><span class="text-[10px] font-extrabold bg-lab-100 text-lab-700 px-2 py-1 rounded-md">آزمایشگاهی</span></td>
+                                    <td class="px-5 py-3 text-xs text-slate-500">۱۴۰۴/۰۶/۲۰</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50">
+                                    <td class="px-5 py-3 font-semibold text-slate-700">یخچال دارویی</td>
+                                    <td class="px-5 py-3"><span class="text-[10px] font-extrabold bg-lab-100 text-lab-700 px-2 py-1 rounded-md">سرمایشی</span></td>
+                                    <td class="px-5 py-3 text-xs text-slate-500">۱۴۰۴/۰۶/۱۸</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50">
+                                    <td class="px-5 py-3 font-semibold text-slate-700">ترازوی دیجیتال</td>
+                                    <td class="px-5 py-3"><span class="text-[10px] font-extrabold bg-lab-100 text-lab-700 px-2 py-1 rounded-md">اندازه‌گیری</span></td>
+                                    <td class="px-5 py-3 text-xs text-slate-500">۱۴۰۴/۰۶/۱۵</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                    <h2 class="font-extrabold text-slate-800 text-sm mb-4">دسترسی سریع</h2>
+                    <div class="space-y-2.5">
+                        <a href="product-create.html" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 transition">
+                            <div class="w-9 h-9 rounded-lg bg-lab-100 text-lab-700 grid place-items-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 4v16m8-8H4"/></svg>
+                            </div>
+                            <span class="text-xs font-bold text-slate-700">افزودن محصول جدید</span>
+                        </a>
+                        <a href="category-create.html" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 transition">
+                            <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 grid place-items-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 4v16m8-8H4"/></svg>
+                            </div>
+                            <span class="text-xs font-bold text-slate-700">افزودن دسته‌بندی</span>
+                        </a>
+                        <a href="../index.html" target="_blank" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 transition">
+                            <div class="w-9 h-9 rounded-lg bg-sky-100 text-sky-700 grid place-items-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </div>
+                            <span class="text-xs font-bold text-slate-700">مشاهده سایت</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>
