@@ -6,6 +6,15 @@
 
 [مشاهده سایت](https://alirzakzmi.github.io/samir-mehr-portfolio/)
 
+## 🔐 ورود به پنل مدیریت
+
+برای مشاهده پنل مدیریت (نسخه دمو) روی لینک زیر کلیک کنید:
+[ورود به پنل ادمین](https://alirzakzmi.github.io/samir-mehr-portfolio/admin/login.html)
+
+**اطلاعات ورود تستی:**
+- **ایمیل:** هر ایمیل معتبری (مثل `admin@example.com`)
+- **رمز عبور:** حداقل ۸ کاراکتر
+- 
 ## 🎨 تکنولوژی‌ها
 
 - HTML5
