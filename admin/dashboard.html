@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>داشبورد | پنل مدیریت</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-layout">
+
+    <aside id="adminSidebar" class="admin-sidebar">
+
+        <div class="sidebar-head">
+            <img src="../assets/images/logo.png" alt="لوگو" />
+            <div>
+                <p class="sidebar-name">سمیر مهر رامان</p>
+                <p class="sidebar-sub">پنل مدیریت</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="side-link active">
+                <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                داشبورد
+            </a>
+
+            <div>
+                <button data-submenu-toggle="submenu-categories" class="side-toggle">
+                    <span>
+                        <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5a1.99 1.99 0 011.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z"/></svg>
+                        دسته‌بندی‌ها
+                    </span>
+                    <svg data-submenu-arrow class="arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="submenu-categories" class="submenu hidden">
+                    <a href="categories.html">لیست دسته‌بندی‌ها</a>
+                    <a href="category-create.html">افزودن دسته‌بندی</a>
+                </div>
+            </div>
+
+            <div>
+                <button data-submenu-toggle="submenu-products" class="side-toggle">
+                    <span>
+                        <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        محصولات
+                    </span>
+                    <svg data-submenu-arrow class="arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="submenu-products" class="submenu hidden">
+                    <a href="products.html">لیست محصولات</a>
+                    <a href="product-create.html">افزودن محصول</a>
+                </div>
+            </div>
+
+            <a href="../index.html" target="_blank" class="side-link">
+                <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                مشاهده سایت
+            </a>
+        </nav>
+
+        <div class="sidebar-foot">
+            <a href="login.html" class="side-link">
+                <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                خروج از حساب
+            </a>
+        </div>
+    </aside>
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <div class="admin-col">
+
+        <header class="admin-header glass">
+            <div class="admin-header-inner">
+                <div class="admin-header-left">
+                    <button id="sidebarToggleBtn" class="sidebar-toggle" aria-label="منو">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                    <div class="titles">
+                        <h1 class="truncate">داشبورد</h1>
+                        <p class="sub truncate">خوش آمدید به پنل مدیریت</p>
+                    </div>
+                </div>
+
+                <div class="admin-user-wrap">
+                    <div class="admin-user">
+                        <p class="name">مدیر سیستم</p>
+                        <p class="mail">admin@example.com</p>
+                    </div>
+                    <div class="avatar">م</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-main">
+
+            <div class="stat-grid">
+
+                <div class="admin-card pad">
+                    <div class="admin-stat-top">
+                        <div class="admin-stat-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                        <span class="trend">+۱۲٪</span>
+                    </div>
+                    <p class="admin-stat-num">15</p>
+                    <p class="admin-stat-label">کل محصولات</p>
+                </div>
+
+                <div class="admin-card pad">
+                    <div class="admin-stat-top">
+                        <div class="admin-stat-icon amber">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5a1.99 1.99 0 011.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z"/></svg>
+                        </div>
+                    </div>
+                    <p class="admin-stat-num">6</p>
+                    <p class="admin-stat-label">دسته‌بندی‌ها</p>
+                </div>
+            </div>
+
+            <div class="dash-grid">
+
+                <div class="admin-card clip dash-wide">
+                    <div class="card-head">
+                        <h2>آخرین محصولات</h2>
+                        <a href="products.html" class="more">مشاهده همه</a>
+                    </div>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>نام محصول</th>
+                                    <th>دسته‌بندی</th>
+                                    <th>تاریخ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cell-name">دستگاه اتوکلاو رومیزی</td>
+                                    <td><span class="pill pill-lab">آزمایشگاهی</span></td>
+                                    <td class="cell-date">۱۴۰۴/۰۶/۲۰</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-name">یخچال دارویی</td>
+                                    <td><span class="pill pill-lab">سرمایشی</span></td>
+                                    <td class="cell-date">۱۴۰۴/۰۶/۱۸</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-name">ترازوی دیجیتال</td>
+                                    <td><span class="pill pill-lab">اندازه‌گیری</span></td>
+                                    <td class="cell-date">۱۴۰۴/۰۶/۱۵</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="admin-card pad">
+                    <h2 class="quick-title">دسترسی سریع</h2>
+                    <div class="quick-list">
+                        <a href="product-create.html" class="quick-item">
+                            <div class="quick-icon">
+                                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 4v16m8-8H4"/></svg>
+                            </div>
+                            <span>افزودن محصول جدید</span>
+                        </a>
+                        <a href="category-create.html" class="quick-item">
+                            <div class="quick-icon amber">
+                                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 4v16m8-8H4"/></svg>
+                            </div>
+                            <span>افزودن دسته‌بندی</span>
+                        </a>
+                        <a href="../index.html" target="_blank" class="quick-item">
+                            <div class="quick-icon sky">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </div>
+                            <span>مشاهده سایت</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>افزودن محصول | پنل مدیریت</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-layout">
+
+    <aside id="adminSidebar" class="admin-sidebar">
+        <div class="sidebar-head">
+            <img src="../assets/images/logo.png" alt="لوگو" />
+            <div><p class="sidebar-name">سمیر مهر رامان</p><p class="sidebar-sub">پنل مدیریت</p></div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="side-link">داشبورد</a>
+            <a href="categories.html" class="side-link">دسته‌بندی‌ها</a>
+            <a href="products.html" class="side-link active">محصولات</a>
+        </nav>
+        <div class="sidebar-foot"><a href="login.html" class="side-link">خروج</a></div>
+    </aside>
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <div class="admin-col">
+
+        <header class="admin-header">
+            <div class="admin-header-inner start">
+                <button id="sidebarToggleBtn" class="sidebar-toggle" aria-label="منو">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <h1>افزودن محصول جدید</h1>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <form action="products.html" class="form-sections">
+
+                <div class="form-card stack">
+                    <h2>اطلاعات اصلی</h2>
+                    <div class="form-two">
+                        <div>
+                            <label class="field-label" for="slugName">نام محصول *</label>
+                            <input type="text" id="slugName" class="admin-field" required placeholder="دستگاه اتوکلاو" />
+                        </div>
+                        <div>
+                            <label class="field-label" for="slugCategory">دسته‌بندی *</label>
+                            <select id="slugCategory" class="admin-field" required>
+                                <option value="">— انتخاب کنید —</option>
+                                <option value="lab">آزمایشگاهی</option>
+                                <option value="cool">سرمایشی</option>
+                                <option value="measure">اندازه‌گیری</option>
+                                <option value="thermal">حرارتی</option>
+                                <option value="mixer">مخلوط‌کن</option>
+                                <option value="microbial">میکروبی</option>
+                                <option value="other">سایر</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="field-label" for="slugTarget">Slug</label>
+                        <input type="text" id="slugTarget" class="admin-field" dir="ltr" />
+                    </div>
+                    <div>
+                        <label class="field-label" for="shortDesc">توضیح کوتاه *</label>
+                        <textarea id="shortDesc" rows="2" required class="admin-field"></textarea>
+                    </div>
+                    <div>
+                        <label class="field-label" for="fullDesc">توضیحات کامل</label>
+                        <textarea id="fullDesc" rows="5" class="admin-field"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h2 class="mb">تصویر محصول</h2>
+                    <div class="image-row">
+                        <div class="image-box">
+                            <img id="imagePreview" src="" alt="پیش‌نمایش تصویر" class="hidden" />
+                            <span id="imagePreview-placeholder">پیش‌نمایش</span>
+                        </div>
+                        <div class="image-info">
+                            <input type="file" accept="image/*" data-image-input="imagePreview" class="file-input" />
+                            <p class="hint">حداکثر ۵۰ مگابایت</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h2 class="mb">وضعیت نمایش</h2>
+                    <label class="check-row">
+                        <input type="checkbox" checked />
+                        <span>نمایش در سایت</span>
+                    </label>
+                    <label class="check-row">
+                        <input type="checkbox" />
+                        <span>نمایش در صفحه اصلی</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <a href="products.html" class="btn-cancel">انصراف</a>
+                    <button type="submit" class="btn-save">ذخیره محصول</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</div>
+
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>
